@@ -232,7 +232,7 @@ public class Main {
 
     } //Третье задание
     public static void main(String[] args) {
-        int global_user_choose = 0; //Глобальная переменная для выбора
+        int global_user_choose = 0; //Глобальная переменная для выбор
         Scanner global_user = new Scanner(System.in);
 
         System.out.println("Лабораторная работа №1");
