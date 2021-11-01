@@ -184,39 +184,37 @@ public class Main {
             hundred_array[i] = random.nextInt(diff + 1) + min;
         }
         System.out.println("Сгенерированный массив: ");
-        for(int i = 0; i< hundred_array.length;i++){ //Заполнение массива числами
-            System.out.print(hundred_array[i] +" ");
+        for(int i = 0; i< hundred_array.length; i++){ //Заполнение массива числами
+            System.out.print(hundred_array[i] + " ");
         }
         System.out.println("");
         System.out.println("-------------");
         Arrays.sort(hundred_array); //Метод класса Arrays для сортировки
         System.out.println("Отсортированный массив: ");
-        for(int i = 0; i< hundred_array.length;i++){ //Заполнение массива числами
-            System.out.print(hundred_array[i] +" ");
+        for(int i = 0; i< hundred_array.length; i++){ //Заполнение массива числами
+            System.out.print(hundred_array[i] + " ");
         }
 
 
-        int i, j, p; //Алгоритм для нажождения всех простых чисел в списке
+        int i, j; //Алгоритм для нажождения всех простых чисел в списке
 
         System.out.print("All prime numbers are:");
 
         for (i = 0; i < hundred_array.length; i++) {
-            j = 2;
-            p = 1;
-            while (j < hundred_array[i]) {
-                if (hundred_array[i] % j == 0) {
-                    p = 0;
+            for (j=2; j < hundred_array[i]; j++) {
+                if (hundred_array[i] % j == 0 && hundred_array[i]!=j) {
+                    hundred_array[i] = 0;
                     break;
                 }
                 j++;
             }
-            if (p == 1) {
+            if (hundred_array[i] != 0) {
                 simple_counter++;
             }
         }
 
-        for(int count = 0; count < hundred_array.length; count++){
-            if(hundred_array[i]%3==0){
+        for(int d = 0; d < hundred_array.length; d++){
+            if(hundred_array[d]%3==0){
                 dill_of_three_counter++;
             }
         }
@@ -225,10 +223,6 @@ public class Main {
         System.out.println("-------------");
         System.out.println("Количество простых чисел:" +simple_counter);
         System.out.println("Количество чисел кратных 3: " + dill_of_three_counter);
-
-
-
-
 
     } //Третье задание
     public static void main(String[] args) {
